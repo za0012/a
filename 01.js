@@ -18,8 +18,13 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', op
 
         movieLists.forEach((movieList) => {
             let movieArticle = document.createElement('article');
-            movieArticle.className = 'modal_btn_new';
-
+            movieArticle.className = 'modal_btn';
+            movieArticle.id = movieList.id;
+          movieArticle.onclick = () => {
+              
+                alert(movieList.id);
+                console.log('hello');
+            };
             let movieDiv = document.createElement('div');
 
             let moviePoster = `https://image.tmdb.org/t/p/w500/${movieList.poster_path}`;
@@ -34,7 +39,6 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', op
             let article = document.createElement('article');
             let img = document.createElement('img');
 
-            /**/
             let h2 = document.createElement('h2');
             let p1 = document.createElement('p');
             let p2 = document.createElement('p');
@@ -68,7 +72,7 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', op
                 console.log('실행이 됐습니까????????????');
                 let movieArticle = document.createElement('article');
                 movieArticle.className = 'modal_btn';
-
+                movieArticle.id = searchMovie.id;
                 let movieDiv = document.createElement('div');
 
                 let moviePoster = `https://image.tmdb.org/t/p/w500/${searchMovie.poster_path}`;
