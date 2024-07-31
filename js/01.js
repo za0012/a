@@ -20,8 +20,7 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', op
             let movieArticle = document.createElement('article');
             movieArticle.className = 'modal_btn';
             movieArticle.id = movieList.id;
-          movieArticle.onclick = () => {
-              
+            movieArticle.onclick = () => {
                 alert(movieList.id);
                 console.log('hello');
             };
